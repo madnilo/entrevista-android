@@ -39,8 +39,14 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
-        String url = "http://swapi.co/api/people";
-        new DownloadTask().execute(url);
+        peopleList = new ArrayList<>();
+
+        String url = "http://swapi.co/api/people/?page=";
+        int i = 1;
+        while(i<10){
+            new DownloadTask().execute(url+i);
+            i++;
+        }
     }
 
     public class DownloadTask extends AsyncTask<String, Void, Integer> {
@@ -103,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             JSONObject response = new JSONObject(result);
             JSONArray peopleJSONArray = response.optJSONArray("results");
-            peopleList = new ArrayList<>();
+            //peopleList = new ArrayList<>();
 
             for (int i = 0; i < peopleJSONArray.length(); i++) {
                 JSONObject object = peopleJSONArray.optJSONObject(i);
