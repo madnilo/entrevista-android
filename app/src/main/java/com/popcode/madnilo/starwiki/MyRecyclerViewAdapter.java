@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.popcode.madnilo.starwiki.OnItemClickListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -28,8 +27,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_row, null);
-        CustomViewHolder viewHolder = new CustomViewHolder(view);
-        return viewHolder;
+        return new CustomViewHolder(view);
     }
 
     @Override
@@ -45,7 +43,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         }
 
         //Setting text view title
-        customViewHolder.name.setText((CharSequence) person.getName());
+        customViewHolder.name.setText(person.getName());
         customViewHolder.gender.setText(person.getGender());
         customViewHolder.height.setText(person.getHeight().equals("unknown") ? "unknown height" : person.getHeight()+"cm");
         customViewHolder.weight.setText(person.getMass().equals("unknown") ? "unknown weight" : person.getMass()+"kg");
@@ -70,13 +68,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
-        protected ImageView imageView;
+        private ImageView imageView;
         protected TextView name;
-        protected TextView gender;
-        protected TextView weight;
+        private TextView gender;
+        private TextView weight;
         protected TextView height;
 
-        public CustomViewHolder(View view) {
+        private CustomViewHolder(View view) {
             super(view);
             this.imageView = (ImageView) view.findViewById(R.id.thumbnail);
             this.name = (TextView) view.findViewById(R.id.name);

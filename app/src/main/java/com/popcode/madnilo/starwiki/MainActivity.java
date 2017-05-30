@@ -2,16 +2,14 @@ package com.popcode.madnilo.starwiki;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import com.popcode.madnilo.starwiki.OnItemClickListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<People> peopleList;
     private RecyclerView mRecyclerView;
-    private MyRecyclerViewAdapter adapter;
+
     private ProgressBar progressBar;
 
     @Override
@@ -92,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
 
             if (result == 1) {
-                adapter = new MyRecyclerViewAdapter(MainActivity.this, peopleList);
+                MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(MainActivity.this, peopleList);
                 mRecyclerView.setAdapter(adapter);
                 adapter.setOnItemClickListener(new OnItemClickListener() {
                     @Override
