@@ -1,5 +1,6 @@
 package com.popcode.madnilo.starwiki;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.popcode.madnilo.starwiki.OnItemClickListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -94,8 +97,10 @@ public class MainActivity extends AppCompatActivity {
                 adapter.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(People person) {
-                        Toast.makeText(MainActivity.this, person.getName(), Toast.LENGTH_LONG).show();
-
+                        Toast.makeText(MainActivity.this, person.getName(), Toast.LENGTH_SHORT).show();
+                        Intent showDetailsIntent = new Intent(MainActivity.this, DetailsActivity.class);
+                        showDetailsIntent.putExtra("person", person);
+                        startActivity(showDetailsIntent);
                     }
                 });
 

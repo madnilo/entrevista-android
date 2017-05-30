@@ -1,5 +1,6 @@
 package com.popcode.madnilo.starwiki;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
  */
 
 
-public class People {
+public class People implements Serializable {
 
     private long id;
 

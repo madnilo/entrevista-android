@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/details_thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder"
+        android:layout_margin="10dp"/>
+
+
+    <TextView
+        android:id="@+id/details_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#444"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/details_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#444"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/details_mass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#444"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/details_hair_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#444"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/details_skin_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#444"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/details_eye_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#444"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/details_birth_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#444"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/details_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#444"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/details_homeworld"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#444"
+        android:textStyle="italic"/>
+
+    <Button
+        android:id="@+id/details_voltar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"/>
+
+
+</LinearLayout>
