@@ -45,7 +45,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         }
 
         //Setting text view title
-        customViewHolder.textView.setText((CharSequence) person.getName());
+        customViewHolder.name.setText((CharSequence) person.getName());
+        customViewHolder.gender.setText(person.getGender());
+        customViewHolder.height.setText(person.getHeight().equals("unknown") ? "unknown height" : person.getHeight()+"cm");
+        customViewHolder.weight.setText(person.getMass().equals("unknown") ? "unknown weight" : person.getMass()+"kg");
+
+
 
 
         View.OnClickListener listener = new View.OnClickListener() {
@@ -55,7 +60,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             }
         };
         customViewHolder.imageView.setOnClickListener(listener);
-        customViewHolder.textView.setOnClickListener(listener);
+        customViewHolder.name.setOnClickListener(listener);
     }
 
     @Override
@@ -66,12 +71,18 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
         protected ImageView imageView;
-        protected TextView textView;
+        protected TextView name;
+        protected TextView gender;
+        protected TextView weight;
+        protected TextView height;
 
         public CustomViewHolder(View view) {
             super(view);
             this.imageView = (ImageView) view.findViewById(R.id.thumbnail);
-            this.textView = (TextView) view.findViewById(R.id.title);
+            this.name = (TextView) view.findViewById(R.id.name);
+            this.gender = (TextView) view.findViewById(R.id.gender);
+            this.height = (TextView) view.findViewById(R.id.height);
+            this.weight = (TextView) view.findViewById(R.id.weight);
         }
     }
 

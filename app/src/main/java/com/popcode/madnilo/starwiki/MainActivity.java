@@ -117,12 +117,12 @@ public class MainActivity extends AppCompatActivity {
                 person.setName(object.optString("name"));
                 person.setHeight(object.optString("height"));
                 person.setMass(object.optString("mass"));
-                person.setMass(object.optString("hair_color"));
-                person.setMass(object.optString("skin_color"));
-                person.setMass(object.optString("eye_color"));
-                person.setMass(object.optString("birth_year"));
-                person.setMass(object.optString("gender"));
-                person.setMass(object.optString("homeworld"));
+                person.setHairColor(object.optString("hair_color"));
+                person.setSkinColor(object.optString("skin_color"));
+                person.setEyeColor(object.optString("eye_color"));
+                person.setBirthYear(object.optString("birth_year"));
+                person.setGender(object.optString("gender"));
+                person.setHomeworld(object.optString("homeworld"));
                 peopleList.add(person);
             }
         } catch (JSONException e) {
