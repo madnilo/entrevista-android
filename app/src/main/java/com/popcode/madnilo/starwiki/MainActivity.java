@@ -97,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
                 adapter.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(People person) {
-                        Toast.makeText(MainActivity.this, person.getName(), Toast.LENGTH_SHORT).show();
                         Intent showDetailsIntent = new Intent(MainActivity.this, DetailsActivity.class);
                         showDetailsIntent.putExtra("person", person);
                         startActivity(showDetailsIntent);

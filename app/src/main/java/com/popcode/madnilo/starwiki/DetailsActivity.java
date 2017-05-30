@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 /**
  * Created by danil on 30/05/2017.
  */
@@ -36,24 +38,25 @@ public class DetailsActivity extends AppCompatActivity{
         TextView details_gender = (TextView) findViewById(R.id.details_gender);
         TextView details_homeworld = (TextView) findViewById(R.id.details_homeworld);
 
-
+        Picasso.with(this).load(person.getThumbnail()).error(R.drawable.placeholder)
+                .placeholder(R.drawable.placeholder).into(img);
         details_name.setText(person.getName());
-        details_height.setText(person.getHeight());
-        details_mass.setText(person.getMass());
-        details_hair_color.setText(person.getHairColor());
-        details_skin_color.setText(person.getSkinColor());
-        details_eye_color.setText(person.getEyeColor());
-        details_birth_year.setText(person.getBirthYear());
-        details_gender.setText(person.getGender());
-        details_homeworld.setText(person.getHomeworld());
+        details_height.setText("Height: "+person.getHeight());
+        details_mass.setText("Weight: "+person.getMass());
+        details_hair_color.setText("Hair Color: "+person.getHairColor());
+        details_skin_color.setText("Skin Color: "+person.getSkinColor());
+        details_eye_color.setText("Eye Color: "+person.getEyeColor());
+        details_birth_year.setText("Birth Year: "+person.getBirthYear());
+        details_gender.setText("Gender: "+person.getGender());
+        details_homeworld.setText("World: "+person.getHomeworld());
 
-        /*Button btn = (Button) findViewById(R.id.details_voltar);
+        Button btn = (Button) findViewById(R.id.details_voltar);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
-        });*/
+        });
     }
 
 
