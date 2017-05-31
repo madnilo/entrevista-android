@@ -1,4 +1,4 @@
-package com.popcode.madnilo.starwiki;
+package com.popcode.madnilo.starwiki.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -30,7 +30,7 @@ public class People implements Serializable {
     private Date created;
     private Date edited;
     private String uri;
-    private String thumbnail;
+    private String thumbnail = "http://sm.ign.com/ign_br/screenshot/default/darth-vader-6bda9114_h4qs.jpg";
 
     public long getId() {
         return id;
@@ -45,14 +45,7 @@ public class People implements Serializable {
     }
 
     public void setName(String name) {
-
         this.name = name;
-        switch(name){
-            case("Luke Skywalker"): this.thumbnail = "http://nerdist.com/wp-content/uploads/2016/05/Old-Luke-Skywalker1.jpg"; break;
-            case("BB8"): this.thumbnail = "http://frasesdestarwars.com.br/site/wp-content/uploads/2016/02/bb-8_14e2ad77.jpeg"; break;
-            case("Rey"): this.thumbnail = "http://frasesdestarwars.com.br/site/wp-content/uploads/2016/10/Rey-face-1200x750.jpg"; break;
-            default: this.thumbnail = "http://digitalspyuk.cdnds.net/15/50/980x490/landscape-1449498579-darth-vader-star-wars.jpg";
-        }
     }
 
     public String getHeight() {

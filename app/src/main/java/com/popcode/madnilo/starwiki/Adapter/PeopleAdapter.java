@@ -1,4 +1,4 @@
-package com.popcode.madnilo.starwiki;
+package com.popcode.madnilo.starwiki.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,17 +9,20 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.popcode.madnilo.starwiki.OnItemClickListener;
+import com.popcode.madnilo.starwiki.model.People;
+import com.popcode.madnilo.starwiki.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.CustomViewHolder> {
+public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CustomViewHolder> {
     private List<People> peopleList;
     private Context mContext;
     private OnItemClickListener onItemClickListener;
 
-    public MyRecyclerViewAdapter(Context context, List<People> peopleList) {
+    public PeopleAdapter(Context context, List<People> peopleList) {
         this.peopleList = peopleList;
         this.mContext = context;
     }

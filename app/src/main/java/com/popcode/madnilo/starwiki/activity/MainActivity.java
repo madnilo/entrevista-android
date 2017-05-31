@@ -1,4 +1,4 @@
-package com.popcode.madnilo.starwiki;
+package com.popcode.madnilo.starwiki.activity;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,6 +10,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.popcode.madnilo.starwiki.adapter.PeopleAdapter;
+import com.popcode.madnilo.starwiki.OnItemClickListener;
+import com.popcode.madnilo.starwiki.model.People;
+import com.popcode.madnilo.starwiki.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -90,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
 
             if (result == 1) {
-                MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(MainActivity.this, peopleList);
+                PeopleAdapter adapter = new PeopleAdapter(MainActivity.this, peopleList);
                 mRecyclerView.setAdapter(adapter);
                 adapter.setOnItemClickListener(new OnItemClickListener() {
                     @Override

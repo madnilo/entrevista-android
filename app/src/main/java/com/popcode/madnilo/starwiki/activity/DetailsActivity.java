@@ -1,4 +1,4 @@
-package com.popcode.madnilo.starwiki;
+package com.popcode.madnilo.starwiki.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.popcode.madnilo.starwiki.model.People;
+import com.popcode.madnilo.starwiki.R;
 import com.squareup.picasso.Picasso;
 
 /**
