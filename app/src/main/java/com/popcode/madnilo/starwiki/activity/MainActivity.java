@@ -11,10 +11,12 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.popcode.madnilo.starwiki.adapter.PeopleAdapter;
 import com.popcode.madnilo.starwiki.OnItemClickListener;
-import com.popcode.madnilo.starwiki.model.People;
 import com.popcode.madnilo.starwiki.R;
+import com.popcode.madnilo.starwiki.adapter.PeopleAdapter;
+import com.popcode.madnilo.starwiki.model.People;
+import com.popcode.madnilo.starwiki.model.SWFAPIResponse;
+import com.popcode.madnilo.starwiki.retrofit.SWFAPI;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,6 +28,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -100,6 +106,18 @@ public class MainActivity extends AppCompatActivity {
                 adapter.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(People person) {
+                        Call<SWFAPIResponse> call = new SWFAPI().getPeopleService().favorite(1);
+                        call.enqueue(new Callback<SWFAPIResponse>() {
+                            @Override
+                            public void onResponse(Call<SWFAPIResponse> call, Response<SWFAPIResponse> response) {
+                                Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                            }
+
+                            @Override
+                            public void onFailure(Call<SWFAPIResponse> call, Throwable t) {
+                                Toast.makeText(MainActivity.this, "Fail", Toast.LENGTH_LONG).show();
+                            }
+                        });
                         Intent showDetailsIntent = new Intent(MainActivity.this, DetailsActivity.class);
                         showDetailsIntent.putExtra("person", person);
                         startActivity(showDetailsIntent);
