@@ -38,8 +38,8 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CustomView
         final People person = peopleList.get(i);
 
         //Download image using picasso library
-        if (!TextUtils.isEmpty(person.getThumbnail())) {
-            Picasso.with(mContext).load(person.getThumbnail())
+        if (!TextUtils.isEmpty("http://sm.ign.com/ign_br/screenshot/default/darth-vader-6bda9114_h4qs.jpg")) {
+            Picasso.with(mContext).load("http://sm.ign.com/ign_br/screenshot/default/darth-vader-6bda9114_h4qs.jpg")
                     .error(R.drawable.placeholder)
                     .placeholder(R.drawable.placeholder)
                     .into(customViewHolder.imageView);

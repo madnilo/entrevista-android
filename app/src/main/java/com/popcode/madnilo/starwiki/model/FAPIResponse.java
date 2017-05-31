@@ -7,7 +7,7 @@ import java.io.Serializable;
  *
  */
 
-public class SWFAPIResponse implements Serializable {
+public class FAPIResponse implements Serializable {
     String status;
     String message;
 

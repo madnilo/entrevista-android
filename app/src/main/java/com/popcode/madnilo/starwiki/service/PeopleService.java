@@ -1,9 +1,7 @@
 package com.popcode.madnilo.starwiki.service;
 
-import com.popcode.madnilo.starwiki.model.People;
-import com.popcode.madnilo.starwiki.model.SWFAPIResponse;
-
-import java.util.List;
+import com.popcode.madnilo.starwiki.model.SWAPIResponse;
+import com.popcode.madnilo.starwiki.model.FAPIResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -17,9 +15,9 @@ import retrofit2.http.Path;
 public interface PeopleService {
 
     @POST("/favorite/{id}")
-    Call<SWFAPIResponse> favorite(@Path("id") int id);
+    Call<FAPIResponse> favorite(@Path("id") int id);
 
-    @GET("/{page}")
-    Call<List<People>> downloadList(@Path("page") int page);
+    @GET("{page}")
+    Call<SWAPIResponse> getPage(@Path("page") int page);
 
 }

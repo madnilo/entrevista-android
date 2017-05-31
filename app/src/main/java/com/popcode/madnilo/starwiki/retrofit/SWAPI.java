@@ -10,8 +10,9 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
  *
  */
 
+
 public class SWAPI {
-    private Retrofit retrofit;
+    private final Retrofit retrofit;
 
     public SWAPI(){
         this.retrofit = new Retrofit.Builder()

@@ -1,12 +1,17 @@
 package com.popcode.madnilo.starwiki.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by danil on 31/05/2017.
+ * Created by Danilo Lima on 31/05/2017.
+ *
  */
 
-public class SWAPIResponse {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class SWAPIResponse implements Serializable{
 
     int count;
     String next;

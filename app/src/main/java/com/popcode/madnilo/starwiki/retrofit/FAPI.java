@@ -10,10 +10,10 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
  *
  */
 
-public class SWFAPI {
+public class FAPI {
     private final Retrofit retrofit;
 
-    public SWFAPI() {
+    public FAPI() {
         this.retrofit = new Retrofit.Builder()
                         .baseUrl("https://private-018a01-starwarsfavorites.apiary-mock.com/")
                         .addConverterFactory(JacksonConverterFactory.create())

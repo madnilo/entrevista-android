@@ -1,7 +1,8 @@
 package com.popcode.madnilo.starwiki.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -9,36 +10,36 @@ import java.util.List;
  *
  */
 
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class People implements Serializable {
 
-    private long id;
+    //private long id;
 
     private String name;
     private String height;
     private String mass;
-    private String hairColor;
-    private String skinColor;
-    private String eyeColor;
-    private String birthYear;
+    private String hair_color;
+    private String skin_color;
+    private String eye_color;
+    private String birth_year;
     private String gender;
     private String homeworld;
     private List<String> films;
     private List<String> species;
     private List<String> vehicles;
     private List<String> starships;
-    private Date created;
-    private Date edited;
+    private String created;
+    private String edited;
     private String uri;
-    private String thumbnail = "http://sm.ign.com/ign_br/screenshot/default/darth-vader-6bda9114_h4qs.jpg";
+    //private String thumbnail = "http://sm.ign.com/ign_br/screenshot/default/darth-vader-6bda9114_h4qs.jpg";
 
-    public long getId() {
+    /*public long getId() {
         return id;
     }
 
     public void setId(long id) {
         this.id = id;
-    }
+    }*/
 
     public String getName() {
         return name;
@@ -64,36 +65,36 @@ public class People implements Serializable {
         this.mass = mass;
     }
 
-    public String getHairColor() {
-        return hairColor;
+    public String getHair_color() {
+        return hair_color;
     }
 
-    public void setHairColor(String hairColor) {
-        this.hairColor = hairColor;
+    public void setHair_color(String hair_color) {
+        this.hair_color = hair_color;
     }
 
-    public String getSkinColor() {
-        return skinColor;
+    public String getSkin_color() {
+        return skin_color;
     }
 
-    public void setSkinColor(String skinColor) {
-        this.skinColor = skinColor;
+    public void setSkin_color(String skin_color) {
+        this.skin_color = skin_color;
     }
 
-    public String getEyeColor() {
-        return eyeColor;
+    public String getEye_color() {
+        return eye_color;
     }
 
-    public void setEyeColor(String eyeColor) {
-        this.eyeColor = eyeColor;
+    public void setEye_color(String eye_color) {
+        this.eye_color = eye_color;
     }
 
-    public String getBirthYear() {
-        return birthYear;
+    public String getBirth_year() {
+        return birth_year;
     }
 
-    public void setBirthYear(String birthYear) {
-        this.birthYear = birthYear;
+    public void setBirth_year(String birth_year) {
+        this.birth_year = birth_year;
     }
 
     public String getGender() {
@@ -144,19 +145,19 @@ public class People implements Serializable {
         this.starships = starships;
     }
 
-    public Date getCreated() {
+    public String getCreated() {
         return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(String created) {
         this.created = created;
     }
 
-    public Date getEdited() {
+    public String getEdited() {
         return edited;
     }
 
-    public void setEdited(Date edited) {
+    public void setEdited(String edited) {
         this.edited = edited;
     }
 
@@ -168,11 +169,11 @@ public class People implements Serializable {
         this.uri = uri;
     }
 
-    public String getThumbnail() {
+    /*public String getThumbnail() {
         return thumbnail;
     }
 
     public void setThumbnail(String thumbnail) {
         this.thumbnail = thumbnail;
-    }
+    }*/
 }

@@ -51,10 +51,10 @@ public class PeopleDAO extends SQLiteOpenHelper {
         data.put("name", person.getName());
         data.put("height", person.getHeight());
         data.put("mass", person.getMass());
-        data.put("hair_color", person.getHairColor());
-        data.put("skin_color", person.getSkinColor());
-        data.put("eye_color", person.getEyeColor());
-        data.put("birth_year", person.getBirthYear());
+        data.put("hair_color", person.getHair_color());
+        data.put("skin_color", person.getSkin_color());
+        data.put("eye_color", person.getEye_color());
+        data.put("birth_year", person.getBirth_year());
         data.put("gender", person.getGender());
         data.put("homeworld", person.getHomeworld());
 
@@ -69,14 +69,14 @@ public class PeopleDAO extends SQLiteOpenHelper {
         List<People> people = new ArrayList<>();
         while(c.moveToNext()){
             People person = new People();
-            person.setId(c.getLong(c.getColumnIndex("id")));
+            //person.setId(c.getLong(c.getColumnIndex("id")));
             person.setName(c.getString(c.getColumnIndex("name")));
             person.setHeight(c.getString(c.getColumnIndex("height")));
             person.setMass(c.getString(c.getColumnIndex("mass")));
-            person.setHairColor(c.getString(c.getColumnIndex("hair_color")));
-            person.setSkinColor(c.getString(c.getColumnIndex("skin_color")));
-            person.setEyeColor(c.getString(c.getColumnIndex("eye_color")));
-            person.setBirthYear(c.getString(c.getColumnIndex("birth_year")));
+            person.setHair_color(c.getString(c.getColumnIndex("hair_color")));
+            person.setSkin_color(c.getString(c.getColumnIndex("skin_color")));
+            person.setEye_color(c.getString(c.getColumnIndex("eye_color")));
+            person.setBirth_year(c.getString(c.getColumnIndex("birth_year")));
             person.setGender(c.getString(c.getColumnIndex("gender")));
             person.setHomeworld(c.getString(c.getColumnIndex("homeworld")));
 

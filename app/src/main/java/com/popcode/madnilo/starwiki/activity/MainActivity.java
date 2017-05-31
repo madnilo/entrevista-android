@@ -15,8 +15,6 @@ import com.popcode.madnilo.starwiki.OnItemClickListener;
 import com.popcode.madnilo.starwiki.R;
 import com.popcode.madnilo.starwiki.adapter.PeopleAdapter;
 import com.popcode.madnilo.starwiki.model.People;
-import com.popcode.madnilo.starwiki.model.SWFAPIResponse;
-import com.popcode.madnilo.starwiki.retrofit.SWFAPI;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,10 +26,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,13 +47,29 @@ public class MainActivity extends AppCompatActivity {
 
         peopleList = new ArrayList<>();
 
-        String url = "http://swapi.co/api/people/?page=";
+       String url = "http://swapi.co/api/people/?page=";
         int i = 1;
         while(i<10){
             new DownloadTask().execute(url+i);
             i++;
         }
+
+        /*Call<SWAPIResponse> call = new SWAPI().getPeopleService().getPage(1);
+        call.enqueue(new Callback<SWAPIResponse>() {
+            @Override
+            public void onResponse(Call<SWAPIResponse> call, Response<SWAPIResponse> response) {
+                Toast.makeText(MainActivity.this, response.body().getResults() == null ? "eh null" : "nao eh null", Toast.LENGTH_LONG).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<SWAPIResponse> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Nao foi!!!", Toast.LENGTH_LONG).show();
+                Log.e("Fail", "Fail", t);
+            }
+        });*/
     }
+
 
     public class DownloadTask extends AsyncTask<String, Void, Integer> {
 
@@ -106,18 +116,6 @@ public class MainActivity extends AppCompatActivity {
                 adapter.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(People person) {
-                        Call<SWFAPIResponse> call = new SWFAPI().getPeopleService().favorite(1);
-                        call.enqueue(new Callback<SWFAPIResponse>() {
-                            @Override
-                            public void onResponse(Call<SWFAPIResponse> call, Response<SWFAPIResponse> response) {
-                                Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
-                            }
-
-                            @Override
-                            public void onFailure(Call<SWFAPIResponse> call, Throwable t) {
-                                Toast.makeText(MainActivity.this, "Fail", Toast.LENGTH_LONG).show();
-                            }
-                        });
                         Intent showDetailsIntent = new Intent(MainActivity.this, DetailsActivity.class);
                         showDetailsIntent.putExtra("person", person);
                         startActivity(showDetailsIntent);
@@ -129,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
 
     private void parseResult(String result) {
         try {
@@ -142,10 +141,10 @@ public class MainActivity extends AppCompatActivity {
                 person.setName(object.optString("name"));
                 person.setHeight(object.optString("height"));
                 person.setMass(object.optString("mass"));
-                person.setHairColor(object.optString("hair_color"));
-                person.setSkinColor(object.optString("skin_color"));
-                person.setEyeColor(object.optString("eye_color"));
-                person.setBirthYear(object.optString("birth_year"));
+                person.setHair_color(object.optString("hair_color"));
+                person.setSkin_color(object.optString("skin_color"));
+                person.setEye_color(object.optString("eye_color"));
+                person.setBirth_year(object.optString("birth_year"));
                 person.setGender(object.optString("gender"));
                 person.setHomeworld(object.optString("homeworld"));
                 peopleList.add(person);
