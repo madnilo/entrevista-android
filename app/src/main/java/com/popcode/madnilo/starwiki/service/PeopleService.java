@@ -1,6 +1,7 @@
 package com.popcode.madnilo.starwiki.service;
 
 import com.popcode.madnilo.starwiki.model.FAPIResponse;
+import com.popcode.madnilo.starwiki.model.Planet;
 import com.popcode.madnilo.starwiki.model.SWAPIResponse;
 
 import retrofit2.Call;
@@ -22,7 +23,10 @@ public interface PeopleService {
     @POST("/favorite/{id}")
     Call<FAPIResponse> favoriteFail(@Path("id") int id);
 
-    @GET("{page}")
+    @GET("/people/?page={page}")
     Call<SWAPIResponse> getPage(@Path("page") int page);
+
+    @GET("planets/{id}")
+    Call<Planet> getPlanet(@Path("id") int id);
 
 }

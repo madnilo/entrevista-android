@@ -17,7 +17,7 @@ public class SWAPI {
 
     public SWAPI(){
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("http://swapi.co/api/people/?page=")
+                .baseUrl("http://swapi.co/api/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
     }
