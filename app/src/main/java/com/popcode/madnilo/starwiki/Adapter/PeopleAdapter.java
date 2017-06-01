@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.popcode.madnilo.starwiki.OnItemClickListener;
 import com.popcode.madnilo.starwiki.model.People;
 import com.popcode.madnilo.starwiki.R;
 import com.squareup.picasso.Picasso;

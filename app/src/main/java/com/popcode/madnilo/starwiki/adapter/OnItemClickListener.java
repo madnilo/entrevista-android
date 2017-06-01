@@ -1,9 +1,10 @@
-package com.popcode.madnilo.starwiki;
+package com.popcode.madnilo.starwiki.adapter;
 
 import com.popcode.madnilo.starwiki.model.People;
 
 /**
- * Created by danil on 29/05/2017.
+ * Created by Danilo Lima on 29/05/2017.
+ *
  */
 
 

@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * Created by Danilo Lima on 30/05/2017.
  *
+ * Classe ainda não utilizada.
  */
 
 public class PeopleDAO extends SQLiteOpenHelper {

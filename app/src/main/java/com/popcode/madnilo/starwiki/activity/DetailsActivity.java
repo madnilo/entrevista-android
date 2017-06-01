@@ -17,12 +17,15 @@ import com.popcode.madnilo.starwiki.model.People;
 import com.popcode.madnilo.starwiki.retrofit.FAPI;
 import com.squareup.picasso.Picasso;
 
+import java.util.Random;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
  * Created by Danilo Lima on 30/05/2017.
+ *
  */
 
 public class DetailsActivity extends AppCompatActivity {
@@ -78,11 +81,13 @@ public class DetailsActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
-        Call<FAPIResponse> call = new FAPI().getPeopleService().favorite(1);
+        Call<FAPIResponse> call = new Random().nextBoolean() ? new FAPI().getPeopleService().favorite(1) : new FAPI().getPeopleService().favoriteFail(1);
         call.enqueue(new Callback<FAPIResponse>() {
             @Override
             public void onResponse(Call<FAPIResponse> call, Response<FAPIResponse> response) {
-                Toast.makeText(DetailsActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                String message = response.code() == 400 ? "Only at the end do you realize the power of the Dark Side." : response.body().getMessage();
+                Toast.makeText(DetailsActivity.this, message, Toast.LENGTH_LONG).show();
+                item.setIcon(response.code()==400 ? R.drawable.ic_star_black_48dp : R.drawable.ic_star_yellow_48dp);
             }
 
             @Override

@@ -8,6 +8,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 /**
  * Created by Danilo Lima on 31/05/2017.
  *
+ * A classe ainda não pôde ser utilizada.
  */
 
 
